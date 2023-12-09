@@ -35,14 +35,8 @@ def part2():
     lines = f.readlines()
   
     for y in range(0,len(lines)):
-      results = re.finditer(regex, lines[y])
-  
-      for result in results:
-        for x in range(result.start(), result.end()):
+      for x in range(0, len(lines[y])):
+        if lines[y][x] == '*':
           if upleft(lines,x,y) or up(lines,x,y) or upright(lines,x,y) or left(lines,x,y) or right(lines,x,y) or downleft(lines,x,y) or down(lines,x,y) or downright(lines,x,y):
-            print(f"line: {str(y+1)}  off: {str(x)} s,f:{result.start()}, {result.end()} match: {result.group()}")
-            total += int(result.group())
-            break
-
-  
-  print(total)    
+            
+            pass
